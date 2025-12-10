@@ -1,9 +1,9 @@
 # app/main.py
 
 from fastapi import FastAPI, HTTPException
-from app.engine.graph_engine import GraphEngine
-from app.models.graph_models import CreateGraphModel, RunGraphModel
-from app.workflows import code_review
+from engine.graph_engine import GraphEngine
+from models.graph_models import CreateGraphModel, RunGraphModel
+from workflow import code_review
 
 app = FastAPI()
 engine = GraphEngine()

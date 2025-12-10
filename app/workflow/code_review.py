@@ -18,8 +18,8 @@ def detect_issues(state):
 
 def suggest_improvements(state):
     score = 100 - (state["issues"] * 10)
-    state["quality_score"] = score
+    result = {"quality_score": score}
 
-    if score < state["threshold"]:
-        return {"next": "suggest_improvements"}   # loop
-    return {}
+    if score < state.get("threshold", 70):
+        result["next"] = "suggest_improvements"   # loop
+    return result
